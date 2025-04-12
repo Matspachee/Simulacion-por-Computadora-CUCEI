@@ -1,0 +1,591 @@
+[gd_scene load_steps=27 format=3 uid="uid://xo0o46wr0jb"]
+
+[ext_resource type="Texture2D" uid="uid://d2aqlseqi4ipn" path="res://Assets MobileGame/Fantasma-Final.png" id="1_7sfm4"]
+[ext_resource type="Script" uid="uid://cwh24dblxd5eo" path="res://Scripts/battle.gd" id="1_i431l"]
+[ext_resource type="FontFile" uid="uid://73ifcffnfblr" path="res://Assets MobileGame/fonts/PixelOperator8.ttf" id="2_i431l"]
+[ext_resource type="Texture2D" uid="uid://c8irbmdmjdm2y" path="res://Assets MobileGame/Interfaz_Limpia.png" id="4_i431l"]
+[ext_resource type="Texture2D" uid="uid://dpf1vc3udeqwx" path="res://Assets MobileGame/Boton.png" id="5_6t8i5"]
+[ext_resource type="Texture2D" uid="uid://bjrsr88spnr02" path="res://Assets MobileGame/Espiritu_Verde_Final.png" id="5_mhv3b"]
+[ext_resource type="Texture2D" uid="uid://bbuurh2tx2a10" path="res://Assets MobileGame/Pan_De_Muerto_Final.png" id="6_lcjiy"]
+[ext_resource type="Texture2D" uid="uid://p8dgtdwgl7o" path="res://Assets MobileGame/Vela-Final.png" id="7_ol6im"]
+[ext_resource type="Texture2D" uid="uid://4wipj2jd2ms5" path="res://Assets MobileGame/Calavera-Final.png" id="9_lcjiy"]
+
+[sub_resource type="Animation" id="Animation_ol6im"]
+resource_name = "Pan"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.50145, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(45.8353, 44.3687), Vector2(45.8353, 53.3687), Vector2(45.8353, 44.3687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.50145, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_b1i6x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(45.8353, 44.3687)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sl0w2"]
+_data = {
+&"Pan": SubResource("Animation_ol6im"),
+&"RESET": SubResource("Animation_b1i6x")
+}
+
+[sub_resource type="Animation" id="Animation_sl0w2"]
+resource_name = "new_animation"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.01, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(33.513, 51.3911), Vector2(41.5131, 51.3911), Vector2(27.5131, 51.3911)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.01, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_elvfr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(33.513, 51.3911)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4s0ev"]
+_data = {
+&"RESET": SubResource("Animation_elvfr"),
+&"new_animation": SubResource("Animation_sl0w2")
+}
+
+[sub_resource type="Animation" id="Animation_mhv3b"]
+resource_name = "Vela"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(33.4057, 49.9755), Vector2(33.4057, 42.9756), Vector2(33.4057, 53.9756)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.6, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lcjiy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(33.4057, 49.9755)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ol6im"]
+_data = {
+&"RESET": SubResource("Animation_lcjiy"),
+&"Vela": SubResource("Animation_mhv3b")
+}
+
+[sub_resource type="Animation" id="Animation_pihy1"]
+resource_name = "Calavera"
+length = 5.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(206.903, 150.196), Vector2(206.903, 137.196)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_slotg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(206.903, 150.196)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ix8ov"]
+_data = {
+&"Calavera": SubResource("Animation_pihy1"),
+&"RESET": SubResource("Animation_slotg")
+}
+
+[sub_resource type="Animation" id="Animation_6t8i5"]
+resource_name = "Hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fantasma:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.100668, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(201.723, 160.233), Vector2(192.632, 152.795), Vector2(200.897, 151.969)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fantasma:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.100668, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_dw4jg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fantasma:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(201.723, 160.233)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fantasma:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0npn6"]
+resource_name = "Push"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fantasma:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.199384, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(201.723, 160.233), Vector2(201.723, 127.233), Vector2(201.723, 160.233)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fantasma:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.199384),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4s0ev"]
+resource_name = "Idle"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fantasma:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(201.723, 160.233), Vector2(215.723, 160.233)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fantasma:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.98),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0npn6"]
+_data = {
+&"Hit": SubResource("Animation_6t8i5"),
+&"Idle": SubResource("Animation_4s0ev"),
+&"Push": SubResource("Animation_0npn6"),
+&"RESET": SubResource("Animation_dw4jg")
+}
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_i431l")
+
+[node name="InterfazLimpia" type="Sprite2D" parent="."]
+position = Vector2(210.754, 314.832)
+scale = Vector2(0.407679, 0.407679)
+texture = ExtResource("4_i431l")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 421.0
+offset_bottom = 630.0
+
+[node name="Botones" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Attack" type="Button" parent="UI/Botones"]
+self_modulate = Color(1, 1, 0.992157, 0.823529)
+z_index = 1
+layout_mode = 2
+offset_left = 35.0
+offset_top = 371.0
+offset_right = 187.0
+offset_bottom = 421.0
+theme_override_fonts/font = ExtResource("2_i431l")
+theme_override_font_sizes/font_size = 23
+text = "ATACAR"
+
+[node name="AttackContainer" type="Sprite2D" parent="UI/Botones/Attack"]
+z_index = -1
+position = Vector2(75.8281, 24.6462)
+scale = Vector2(0.396549, 0.334239)
+texture = ExtResource("5_6t8i5")
+
+[node name="Bloquear" type="Button" parent="UI/Botones"]
+z_index = 1
+layout_mode = 2
+offset_left = 232.0
+offset_top = 370.0
+offset_right = 386.0
+offset_bottom = 421.0
+theme_override_fonts/font = ExtResource("2_i431l")
+theme_override_font_sizes/font_size = 20
+text = "BLOQUEAR"
+
+[node name="BloquearContainer" type="Sprite2D" parent="UI/Botones/Bloquear"]
+z_index = -1
+position = Vector2(76.7664, 25.3501)
+scale = Vector2(0.398886, 0.33768)
+texture = ExtResource("5_6t8i5")
+
+[node name="Objetos" type="Button" parent="UI/Botones"]
+z_index = 1
+layout_mode = 2
+offset_left = 135.0
+offset_top = 456.0
+offset_right = 287.0
+offset_bottom = 507.0
+theme_override_fonts/font = ExtResource("2_i431l")
+theme_override_font_sizes/font_size = 22
+text = "OBJETOS"
+
+[node name="ObjetosContainer" type="Sprite2D" parent="UI/Botones/Objetos"]
+z_index = -1
+position = Vector2(76.1488, 24.9652)
+scale = Vector2(0.395311, 0.338434)
+texture = ExtResource("5_6t8i5")
+
+[node name="Inventario" type="Control" parent="UI"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanButton" type="Button" parent="UI/Inventario"]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 365.0
+offset_right = 256.0
+offset_bottom = 445.0
+
+[node name="Pan" type="Sprite2D" parent="UI/Inventario/PanButton"]
+position = Vector2(45.8353, 44.3687)
+scale = Vector2(0.24305, 0.24305)
+texture = ExtResource("6_lcjiy")
+
+[node name="PanAnimation" type="AnimationPlayer" parent="UI/Inventario/PanButton/Pan"]
+libraries = {
+&"": SubResource("AnimationLibrary_sl0w2")
+}
+
+[node name="Usar" type="Button" parent="UI/Inventario"]
+z_index = 1
+layout_mode = 0
+offset_left = 226.0
+offset_top = 481.0
+offset_right = 361.0
+offset_bottom = 525.0
+theme_override_fonts/font = ExtResource("2_i431l")
+theme_override_font_sizes/font_size = 24
+text = "USAR"
+
+[node name="UsarContainer" type="Sprite2D" parent="UI/Inventario/Usar"]
+z_index = -1
+position = Vector2(67.3073, 21.9257)
+scale = Vector2(0.347274, 0.285879)
+texture = ExtResource("5_6t8i5")
+
+[node name="Volver" type="Button" parent="UI/Inventario"]
+z_index = 1
+layout_mode = 0
+offset_left = 58.0
+offset_top = 483.0
+offset_right = 190.0
+offset_bottom = 525.0
+theme_override_fonts/font = ExtResource("2_i431l")
+theme_override_font_sizes/font_size = 22
+text = "VOLVER
+"
+
+[node name="VolverContainer" type="Sprite2D" parent="UI/Inventario/Volver"]
+z_index = -1
+position = Vector2(66.0764, 20.7205)
+scale = Vector2(0.345364, 0.286863)
+texture = ExtResource("5_6t8i5")
+
+[node name="EspirituButton" type="Button" parent="UI/Inventario"]
+layout_mode = 0
+offset_left = 292.636
+offset_top = 350.0
+offset_right = 355.636
+offset_bottom = 446.0
+
+[node name="Espiritu" type="Sprite2D" parent="UI/Inventario/EspirituButton"]
+position = Vector2(33.513, 51.3911)
+scale = Vector2(0.270016, 0.263778)
+texture = ExtResource("5_mhv3b")
+
+[node name="EspirituAnimation" type="AnimationPlayer" parent="UI/Inventario/EspirituButton/Espiritu"]
+libraries = {
+&"": SubResource("AnimationLibrary_4s0ev")
+}
+
+[node name="VelaButton" type="Button" parent="UI/Inventario"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 351.0
+offset_right = 128.0
+offset_bottom = 444.0
+
+[node name="Vela" type="Sprite2D" parent="UI/Inventario/VelaButton"]
+position = Vector2(33.4057, 49.9755)
+scale = Vector2(0.207506, 0.207506)
+texture = ExtResource("7_ol6im")
+
+[node name="VelaAnimation" type="AnimationPlayer" parent="UI/Inventario/VelaButton/Vela"]
+libraries = {
+&"": SubResource("AnimationLibrary_ol6im")
+}
+
+[node name="Mensaje" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 256.0
+offset_right = 383.0
+offset_bottom = 326.0
+theme_override_fonts/font = ExtResource("2_i431l")
+text = "
+Te sientes observado ..."
+
+[node name="Timer" type="Timer" parent="UI"]
+
+[node name="Enemy" type="Node2D" parent="."]
+
+[node name="Fantasma" type="Sprite2D" parent="Enemy"]
+position = Vector2(201.723, 160.233)
+scale = Vector2(0.363248, 0.363248)
+texture = ExtResource("1_7sfm4")
+
+[node name="Vida" type="Label" parent="Enemy"]
+offset_left = 106.0
+offset_top = 29.0
+offset_right = 165.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("2_i431l")
+theme_override_font_sizes/font_size = 32
+text = "??"
+
+[node name="Calavera" type="Sprite2D" parent="Enemy"]
+visible = false
+position = Vector2(206.903, 150.196)
+scale = Vector2(0.436633, 0.436633)
+texture = ExtResource("9_lcjiy")
+
+[node name="CalaveraAnimation" type="AnimationPlayer" parent="Enemy/Calavera"]
+libraries = {
+&"": SubResource("AnimationLibrary_ix8ov")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy"]
+libraries = {
+&"": SubResource("AnimationLibrary_0npn6")
+}
+
+[connection signal="pressed" from="UI/Botones/Attack" to="." method="_on_attack_pressed"]
+[connection signal="pressed" from="UI/Botones/Bloquear" to="." method="_on_bloquear_pressed"]
+[connection signal="pressed" from="UI/Botones/Objetos" to="." method="_on_objetos_pressed"]
+[connection signal="pressed" from="UI/Inventario/Volver" to="." method="_on_volver_pressed"]
